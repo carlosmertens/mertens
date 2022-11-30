@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <title>Carlos Mertens | Webpage</title>
+        <title>Carlos Mertens | Exiting and creative web developer</title>
         <meta
           name='description'
           content='Web developer focus on creating with React and Nextjs'
