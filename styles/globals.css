@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /* Jedi's lightsaber colors:
   - Blue (Luke's)
   - Green (Yoda's)
@@ -20,27 +24,27 @@
   );
 }
 
-* {
+/* * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
+} */
 
 body {
   background-color: #000;
-  font-family: 'ubuntu', Arial, sans-serif;
+  /* font-family: fantasy; */
   overflow-x: hidden;
 }
 
 /* ********** HEADER COMPONENT ********** */
 
-.header {
+/* .header {
   position: relative;
   height: 100vh;
-}
+} */
 
 /* NAVBAR */
-.nav-container {
+/* .nav-container {
   position: absolute;
   top: 0;
   left: 0;
@@ -48,15 +52,15 @@ body {
   width: 100%;
   display: flex;
   align-items: center;
-}
+} */
 
-.nav-logo-link {
+/* .nav-logo-link {
   margin-left: 1rem;
 }
 
 .nav-logo-link:first-child {
   margin-left: 2.5rem;
-}
+} */
 
 .git-animated {
   animation: moveInRight 3s ease-in-out 6s;
@@ -74,13 +78,13 @@ body {
 }
 
 /* BANNER CONTAINER */
-.banner-container {
+/* .banner-container {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-}
+} */
 
 /* BANNER TEXT */
 .banner-title {
@@ -88,7 +92,7 @@ body {
   background-clip: text;
   background-image: var(--multi-color-gradient);
   background-size: 300% auto;
-  font-size: 2.5rem;
+  /* font-size: 2.5rem; */
   font-weight: 900;
   letter-spacing: 1rem;
   text-transform: uppercase;
@@ -98,9 +102,9 @@ body {
   animation: textBorder 10s linear 3s infinite, textEnter 3s ease-in-out;
 }
 
-.banner-title-sub {
+/* .banner-title-sub {
   display: none;
-}
+} */
 
 /* ********** KEYFRAMES ********** */
 
@@ -138,6 +142,6 @@ body {
 
 @media only screen and (min-width: 640px) {
   .banner-title {
-    font-size: 5rem;
+    /* font-size: 6rem; */
   }
 }
