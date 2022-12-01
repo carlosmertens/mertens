@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import { Header } from '../components/Header';
+import { Cube } from '../components/Cube';
 
 export default function Home() {
   return (
@@ -14,6 +15,10 @@ export default function Home() {
       </Head>
 
       <Header />
+
+      <section className='h-screen flex justify-center items-center'>
+        <Cube t1='next' t2='node' t3='warp' t4='iTerm' />
+      </section>
     </div>
   );
 }

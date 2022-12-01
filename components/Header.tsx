@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { Cube } from './Cube';
 
 export const Header = () => {
   return (
@@ -8,32 +9,19 @@ export const Header = () => {
         <Link
           className='ml-10 git-animated'
           href='https://github.com/carlosmertens'>
-          <Image
-            className='nav-logo'
-            src='/github.png'
-            alt='Home logo'
-            height={55}
-            width={55}
-          />
+          <Image src='/github.png' alt='Github logo' height={55} width={55} />
         </Link>
         <Link
           className='ml-4 twit-animated'
           href='https://twitter.com/CarlosMertens1'>
-          <Image
-            className='nav-logo'
-            src='/twitter.png'
-            alt='Home logo'
-            height={55}
-            width={55}
-          />
+          <Image src='/twitter.png' alt='Twitter logo' height={55} width={55} />
         </Link>
         <Link
           className='ml-4 in-animated'
           href='https://www.linkedin.com/in/carlosmertens/'>
           <Image
-            className='nav-logo'
             src='/linkedin.png'
-            alt='Home logo'
+            alt='LinkedIn logo'
             height={55}
             width={55}
           />
@@ -47,6 +35,9 @@ export const Header = () => {
             your exiting and creative web developer
           </span>
         </h1>
+      </div>
+      <div className='absolute right-5 bottom-5'>
+        <Cube t1='react' t2='js' t3='css' t4='html' />
       </div>
     </header>
   );
