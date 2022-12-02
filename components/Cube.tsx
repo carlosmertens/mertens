@@ -1,22 +1,14 @@
-export const Cube = ({ t1 = '', t2 = '', t3 = '', t4 = '' }) => {
+export const Cube = ({ text1 = '', text2 = '', text3 = '', text4 = '' }) => {
   return (
-    <div className='cube relative w-16 h-16'>
-      <div className='side-top w-16 h-16 bg-zinc-900 flex justify-center items-center text-yellow-700'></div>
-
-      <div className='absolute top-0 left-0 w-full h-full'>
-        <span className='side-0 flex justify-center items-center text-zinc-700 text-sm'>
-          {t1}
-        </span>
-        <span className='side-1 flex justify-center items-center text-zinc-700 text-sm'>
-          {t2}
-        </span>
-        <span className='side-2 flex justify-center items-center text-zinc-700 text-sm'>
-          {t3}
-        </span>
-        <span className='side-3 flex justify-center items-center text-zinc-700 text-sm'>
-          {t4}
-        </span>
+    <div className='cube'>
+      <div className='sides'>
+        <span className='side-0 '>{text1}</span>
+        <span className='side-1 '>{text2}</span>
+        <span className='side-2 '>{text3}</span>
+        <span className='side-3 '>{text4}</span>
       </div>
+
+      <div className='side-top'></div>
     </div>
   );
 };

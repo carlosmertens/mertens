@@ -16,8 +16,8 @@ export default function Home() {
 
       <Header />
 
-      <section className='h-screen flex justify-center items-center'>
-        <Cube t1='next' t2='node' t3='warp' t4='iTerm' />
+      <section className='section-two'>
+        <Cube text1='yarn' text2='node' text3='warp' text4='iTerm' />
       </section>
     </div>
   );
