@@ -1,0 +1,256 @@
+/* Jedi's lightsaber colors:
+  - Blue (Luke's)
+  - Green (Yoda's)
+  - Purple (Windu's)
+  - Red (Darth Vader)
+  - White (Ahsoka's)
+*/
+/* background-color: #1a1a1a */
+
+/* ********** VARIABLES ********** */
+
+$multi-color-gradient: linear-gradient(
+  to right,
+  #0040ff,
+  #20eb6e,
+  #ffffff,
+  #ff00d2,
+  #fed90f,
+  #ffffff,
+  #c520c5,
+  #ffffff,
+  #0000ff
+);
+$ambient-color: #00ff00;
+$sides-gradient: linear-gradient(#151515, #00ff00);
+
+/* ********** GLOBAL RESETS AND INITIAL PROPERTIES ********** */
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 125%; /* assuming default browser (16px) to get 20px base */
+}
+
+body {
+  box-sizing: border-box;
+  color: #fff;
+  background-color: #000;
+  overflow-x: hidden;
+}
+
+/* ********** REUSABLE DECLARATIONS ********** */
+
+.text-hidden {
+  display: none;
+}
+
+/* ********** HEADER COMPONENT ********** */
+
+.header {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+}
+
+/* NAVBAR */
+.header__nav-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 12vh;
+  display: flex;
+  align-items: center;
+}
+
+.header__nav-logo-link {
+  margin-left: 0.5rem;
+}
+.header__nav-logo-link:first-child {
+  margin-left: 1.5rem;
+}
+
+.git-animated {
+  animation: moveInRight 1s ease-in-out 1.5s;
+  animation-fill-mode: backwards;
+}
+
+.twit-animated {
+  animation: moveInRight 1s ease-in-out 1s;
+  animation-fill-mode: backwards;
+}
+
+.in-animated {
+  animation: moveInRight 1s ease-in-out 0.5s;
+  animation-fill-mode: backwards;
+}
+
+/* BANNER CONTAINER */
+.banner-container {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+/* BANNER Title */
+.banner--title-main {
+  color: #000;
+  background-clip: text;
+  background-image: $multi-color-gradient;
+  background-size: 300% auto;
+  font-size: 2rem;
+  letter-spacing: 0.5rem;
+  text-transform: uppercase;
+  -webkit-text-stroke-color: transparent;
+  -webkit-text-stroke-width: calc(1em / 16);
+}
+
+.banner--title-sub {
+  margin-top: 1rem;
+  animation: textBorder 10s linear 3s infinite, textEnter 1s ease-in-out;
+}
+
+/* FOOTER CUBE */
+.footer-cube {
+  position: absolute;
+  bottom: 1.25rem;
+  right: 1.25rem;
+}
+
+/* ********** CUBE AMBIENT LIGHT COMPONENT ********** */
+
+.cube {
+  position: relative;
+  width: 4rem;
+  height: 4rem;
+  transform-style: preserve-3d;
+  animation: rotateCube 10s linear infinite;
+}
+
+.cube div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+}
+
+.cube div span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.8rem;
+  color: #222;
+}
+
+.side-0 {
+  background: $sides-gradient;
+  transform: rotateY(calc(90deg * 0)) translateZ(2rem);
+}
+.side-1 {
+  background: $sides-gradient;
+  transform: rotateY(calc(90deg * 1)) translateZ(2rem);
+}
+.side-2 {
+  background: $sides-gradient;
+  transform: rotateY(calc(90deg * 2)) translateZ(2rem);
+}
+.side-3 {
+  background: $sides-gradient;
+  transform: rotateY(calc(90deg * 3)) translateZ(2rem);
+}
+.side-top {
+  width: 4rem;
+  height: 4rem;
+  background: #222;
+  transform: rotateX(90deg) translateZ(2rem);
+}
+.side-top::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4rem;
+  height: 4rem;
+  background: #0f0;
+  transform: translateZ(-10rem);
+  filter: blur(2rem);
+  box-shadow: 0 0 12rem rgba(0, 255, 0, 0.2), 0 0 20rem rgba(0, 255, 0, 0.4),
+    0 0 20rem rgba(0, 255, 0, 0.6), 0 0 40rem rgba(0, 255, 0, 0.8),
+    0 0 50rem rgba(0, 255, 0, 1);
+}
+
+/* ********** SECTION TWO ********** */
+
+.section-two {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ********** KEYFRAMES ANIMATIONS ********** */
+
+/* BANNER ANIMATION */
+@keyframes textBorder {
+  to {
+    background-position: 300% center;
+  }
+}
+
+@keyframes textEnter {
+  0% {
+    opacity: 0;
+    transform: translateY(10rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+/* NAVBAR ANIMATION */
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(-5rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+/* CUBE ANIMATION */
+@keyframes rotateCube {
+  0% {
+    transform: rotateX(-30deg) rotateY(0deg);
+  }
+  100% {
+    transform: rotateX(-30deg) rotateY(360deg);
+  }
+}
+
+/* ***** MEDIA QUERIES FOR RESPONSIIVE DESIGN ***** */
+
+@media only screen and (min-width: 640px) {
+  .banner-title {
+    font-size: 6rem;
+  }
+}

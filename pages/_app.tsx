@@ -1,4 +1,4 @@
-import '../styles/globals.css';
+import '../styles/main.scss';
 import type { AppProps } from 'next/app';
 import { Zen_Dots } from '@next/font/google';
 

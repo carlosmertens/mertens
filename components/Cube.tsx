@@ -1,6 +1,12 @@
-export const Cube = ({ text1 = '', text2 = '', text3 = '', text4 = '' }) => {
+export const Cube = ({
+  text1 = '',
+  text2 = '',
+  text3 = '',
+  text4 = '',
+  color = 'green',
+}) => {
   return (
-    <div className='cube'>
+    <div className={`cube ${color}`}>
       <div className='sides'>
         <span className='side-0 '>{text1}</span>
         <span className='side-1 '>{text2}</span>
